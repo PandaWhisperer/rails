@@ -53,6 +53,10 @@ class ObjectTryTest < ActiveSupport::TestCase
     assert_equal "false", false.try(:to_s)
   end
 
+  def test_nil_try_blank?
+    assert_equal true, nil.try(:blank?)
+  end
+
   def test_try_only_block
     assert_equal @string.reverse, @string.try(&:reverse)
   end
